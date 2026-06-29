@@ -1,0 +1,6 @@
+{
+  "name": "Medicant Hospital & Research Centre",
+  "description": "Redesign of Medicant Hospital & Research Centre (medicanthospital.com) into a modern, premium 2D healthcare website, including comprehensive departments, specialist doctors, services, facilities, patient care details, and an AI Chatbot coordinator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
