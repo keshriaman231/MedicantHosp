@@ -375,8 +375,8 @@
  */
 
 import React, { useState } from 'react';
-import { 
-  MapPin, Phone, Mail, Send, CheckCircle, 
+import {
+  MapPin, Phone, Mail, Send, CheckCircle,
   Map, Navigation, Sparkles, AlertCircle
 } from 'lucide-react';
 import { hospitalInfo } from '../data/hospitalData';
@@ -397,7 +397,7 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const cleanName = sanitizeInput(formData.name);
     const cleanEmail = sanitizeInput(formData.email);
     const cleanPhone = sanitizeInput(formData.phone);
@@ -434,7 +434,7 @@ export default function ContactUs() {
       setSubmitError(`Rate limit exceeded. Please wait ${rateLimit.timeLeftSeconds} seconds.`);
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitError(null);
 
@@ -464,7 +464,7 @@ export default function ContactUs() {
 
   return (
     <div className="w-full bg-[#F8FAFC] text-slate-800 font-sans pb-16" id="contact-page-root">
-      
+
       {/* Hero Banner */}
       <section className="bg-[#0B1F3A] text-white py-16 relative overflow-hidden" id="contact-hero">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-green-900/20 to-transparent pointer-events-none"></div>
@@ -482,7 +482,7 @@ export default function ContactUs() {
       {/* Main Grid Section */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="contact-main-grid-section">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          
+
           {/* Left Side Panel */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -534,22 +534,22 @@ export default function ContactUs() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Patient Name *</label>
-                    <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} placeholder="e.g. Ramesh Kumar" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006B3F]" />
+                    <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="e.g. Ramesh Kumar" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006B3F]" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Contact Number *</label>
-                    <input type="text" required value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} placeholder="e.g. +91 99340 12345" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006B3F]" />
+                    <input type="text" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="e.g. +91 99340 12345" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006B3F]" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Email Address</label>
-                    <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} placeholder="e.g. ramesh@gmail.com" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006B3F]" />
+                    <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="e.g. ramesh@gmail.com" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006B3F]" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Inquiry Subject</label>
-                    <select value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-700 focus:outline-none focus:border-[#006B3F]">
+                    <select value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-700 focus:outline-none focus:border-[#006B3F]">
                       <option value="General Inquiry">General Admission Inquiry</option>
                       <option value="OPD Schedule">OPD Timing Inquiry</option>
                       <option value="Diagnostic Booking">Pathology & Radiology Inquiry</option>
@@ -560,7 +560,7 @@ export default function ContactUs() {
 
                 <div className="flex flex-col gap-1">
                   <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Your Message / Symptoms *</label>
-                  <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} placeholder="Describe your requirements..." className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006B3F] resize-none"></textarea>
+                  <textarea required rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Describe your requirements..." className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs text-slate-800 focus:outline-none focus:border-[#006B3F] resize-none"></textarea>
                 </div>
 
                 <button type="submit" disabled={isSubmitting} className="bg-[#006B3F] hover:bg-[#005431] text-white py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 mt-2 transition-colors">
@@ -574,7 +574,7 @@ export default function ContactUs() {
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="bg-[#0B1F3A] text-white p-6 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-5 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-gradient-to-bl from-green-500/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-              
+
               <div className="flex justify-between items-center border-b border-slate-800 pb-3">
                 <span className="text-green-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
                   <Map className="w-4.5 h-4.5" /> Campus Map Coordinates
@@ -582,14 +582,18 @@ export default function ContactUs() {
                 <span className="text-[10px] text-slate-500">23.65° N, 86.15° E</span>
               </div>
 
-              {/* 🎯 Real Embed-Authorized Interactive Google Map Frame */}
+              {/* 🎯 Real Embed-Authorized Interactive Google Map Frame for Medicant Hospital */}
+              {/* 🎯 Safe Production-Ready Interactive Google Map Frame */}
               <div className="w-full h-64 rounded-2xl overflow-hidden border border-slate-800 shadow-inner relative z-10">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.2302155319026!2d86.13400607402234!3d23.631925093316912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4239100000001%3A0xc1c26f6c86fd4bde!2sMedicant%20Hospital%20%26%20Research%20Centre!5e0!3m2!1sen!2sin!4v1782778985553!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" className="w-full h-full border-0"
-                  title="Medicant Hospital Map Embed"
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.945281987595!2d86.13398907533355!3d23.631971178753238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4239100000001%3A0xc1c26f6c86fd4bde!2sMedicant%20Hospital%20%26%20Research%20Centre!5e0!3m2!1sen!2sin!4v1719727200000!5m2!1sen!2sin"
+                  className="w-full h-full border-0"
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Medicant Hospital Bokaro Map Embed"
                 />
               </div>
-
               {/* Coordinate Metrics */}
               <div className="flex flex-col gap-4 relative">
                 <div className="flex justify-between items-center text-[10px] text-slate-400 border-b border-dashed border-slate-800/60 pb-1">
